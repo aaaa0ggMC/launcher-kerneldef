@@ -282,7 +282,7 @@ onBeforeUnmount(() => {
       </div>
     </div>
 
-    <div class="kd-toolbar d-flex align-center ga-2 pb-3">
+    <div class="kd-toolbar d-flex align-center flex-wrap ga-2 pb-3">
       <v-btn
         variant="text"
         :icon="muted ? 'mdi-volume-off' : 'mdi-volume-high'"
@@ -310,7 +310,7 @@ onBeforeUnmount(() => {
         {{ t('kerneldef.reset.button') }}
       </v-btn>
       <v-spacer />
-      <span class="text-caption text-medium-emphasis">{{ t('kerneldef.title') }}</span>
+      <span class="text-caption text-medium-emphasis text-no-wrap">{{ t('kerneldef.title') }}</span>
     </div>
 
     <div ref="stage" class="kd-stage flex-grow-1 d-flex align-center justify-center">
