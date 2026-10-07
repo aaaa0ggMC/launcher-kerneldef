@@ -310,7 +310,9 @@ onBeforeUnmount(() => {
         {{ t('kerneldef.reset.button') }}
       </v-btn>
       <v-spacer />
-      <span class="text-caption text-medium-emphasis text-no-wrap">{{ t('kerneldef.title') }}</span>
+      <span class="text-caption text-medium-emphasis text-no-wrap kd-title">{{
+        t('kerneldef.title')
+      }}</span>
     </div>
 
     <div ref="stage" class="kd-stage flex-grow-1 d-flex align-center justify-center">
@@ -391,5 +393,20 @@ onBeforeUnmount(() => {
   min-height: 41px;
   border-radius: 10px;
   background: rgba(var(--v-theme-surface-variant), 0.35);
+}
+
+@media (max-width: 720px) {
+  /* 顶栏已经写着页面名，窄屏上这行标题只会自己换成孤零零的一行 */
+  .kd-title {
+    display: none;
+  }
+}
+
+/* 竖屏手机：横版画面贴着工具栏放在上方，不在高高的舞台里垂直居中（上下各空出半屏） */
+@media (max-width: 720px) and (orientation: portrait) {
+  .kd-canvas {
+    top: 0;
+    transform: translateX(-50%);
+  }
 }
 </style>
